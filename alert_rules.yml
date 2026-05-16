@@ -1,0 +1,66 @@
+# groups:
+#   - name: system_alerts
+#     rules:
+
+#   
+#       - alert: HighCPUUsageWarning
+#         expr: rate(process_cpu_seconds_total[1m]) > 0.5
+#         for: 1m
+#         labels:
+#           severity: warning
+#         annotations:
+#           summary: "High CPU usage detected"
+#           description: "CPU usage is above 0.5 for 1 minute"
+
+#      
+#       - alert: HighMemoryUsageCritical
+#         expr: process_resident_memory_bytes > 200000000
+#         for: 1m
+#         labels:
+#           severity: critical
+#         annotations:
+#           summary: "High memory usage detected"
+#           description: "Memory usage exceeded critical threshold"
+
+# groups:
+#   - name: system_alerts
+#     rules:
+
+#       - alert: HighCPUUsageWarning
+#         expr: rate(process_cpu_seconds_total[1m]) > 0.01
+#         for: 10s
+#         labels:
+#           severity: warning
+#         annotations:
+#           summary: "High CPU usage detected"
+#           description: "CPU usage is high"
+
+#       - alert: HighMemoryUsageCritical
+#         expr: process_resident_memory_bytes > 1
+#         for: 10s
+#         labels:
+#           severity: critical
+#         annotations:
+#           summary: "High memory usage detected"
+#           description: "Memory usage is high"
+
+
+groups:
+- name: system_alerts
+  rules:
+
+  - alert: HighCPUUsageWarning
+    expr: rate(process_cpu_seconds_total[1m]) > 0.5
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: High CPU usage detected
+
+  - alert: HighMemoryUsageCritical
+    expr: process_resident_memory_bytes > 200000000
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: High memory usage detected

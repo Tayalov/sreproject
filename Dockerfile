@@ -1,23 +1,12 @@
-# FROM node:18
+FROM node:18
 
-# WORKDIR /app
+WORKDIR /app
 
-# COPY package*.json ./
-# RUN npm install
+COPY package.json .
+RUN npm install
 
-# COPY . .
+COPY . .
 
-# RUN npm run build
+EXPOSE 5006
 
-# FROM nginx:alpine
-
-# COPY --from=0 /app/build /usr/share/nginx/html
-
-# EXPOSE 80
-
-# CMD ["nginx", "-g", "daemon off;"]
-FROM nginx:alpine
-
-COPY . /usr/share/nginx/html
-
-EXPOSE 80
+CMD ["node", "index.js"]

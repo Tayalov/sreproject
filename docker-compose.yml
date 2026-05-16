@@ -1,0 +1,1059 @@
+# version: '3.8'
+
+# services:
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+#     # depends_on:
+#     #   - backend
+
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "5000:5000"
+#     depends_on:
+#       - mongo
+#     environment:
+#       - MONGO_URI=mongodb://mongo:27017/finalweb
+#       - PORT=5000
+
+#   mongo:
+#     image: mongo
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo_data:/data/db
+
+#   prometheus:
+#     image: prom/prometheus
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#       - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+#     ports:
+#       - "9090:9090"
+#     depends_on:
+#     - backend
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+
+# volumes:
+#   mongo_data:
+
+# version: "3.8"
+
+# services:
+
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "5000:5000"
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+
+#   mongo:
+#     image: mongo
+#     ports:
+#       - "27017:27017"
+
+#   prometheus:
+#     image: prom/prometheus
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#       - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+#     ports:
+#       - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+
+  
+
+# version: "3.8"
+
+# services:
+
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "5000:5000"
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+
+#   mongo:
+#     image: mongo
+#     ports:
+#       - "27017:27017"
+
+#   prometheus:
+#     image: prom/prometheus
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#       - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+#     ports:
+#       - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     ports:
+#       - "9100:9100"
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+
+#   # mongo:
+#   #   image: mongo
+#   #   ports:
+#   #     - "27017:27017"
+
+#   prometheus:
+#     image: prom/prometheus
+#      depends_on:
+#     - auth-service
+#     - user-service
+#     - product-service
+#     - order-service
+#     - chat-service
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#       - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+#     ports:
+#       - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     ports:
+#       - "9100:9100"
+
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+
+#   prometheus:
+#     image: prom/prometheus
+#     depends_on:
+#       - auth-service
+#       - user-service
+#       - product-service
+#       - order-service
+#       - chat-service
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#       - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+#     ports:
+#       - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     ports:
+#       - "9100:9100"
+
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+#     environment:
+#       - MONGO_URL=mongodb://mongo:27017/auth
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+#     environment:
+#       - MONGO_URL=mongodb://mongo:27017/users
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+#     environment:
+#       - DB_HOST=postgres
+#       - DB_PORT=5432
+#       - DB_USER=admin
+#       - DB_PASSWORD=admin
+#       - DB_NAME=sre_db
+#     depends_on:
+#       - postgres
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+#     depends_on:
+#       - auth-service
+#       - user-service
+#       - product-service
+#       - order-service
+
+#   # ---------------- DATABASES ----------------
+
+#   mongo:
+#     image: mongo:6
+#     container_name: mongo_db
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo_data:/data/db
+
+#   postgres:
+#     image: postgres:15
+#     container_name: postgres_db
+#     environment:
+#       POSTGRES_USER: admin
+#       POSTGRES_PASSWORD: admin
+#       POSTGRES_DB: sre_db
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pg_data:/var/lib/postgresql/data
+
+#   # ---------------- MONITORING ----------------
+
+#   prometheus:
+#     image: prom/prometheus
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#       - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+#     ports:
+#       - "9090:9090"
+#     depends_on:
+#       - auth-service
+#       - user-service
+#       - product-service
+#       - order-service
+#       - chat-service
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+#     volumes:
+#       - grafana_data:/var/lib/grafana
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     ports:
+#       - "9100:9100"
+
+# # ---------------- VOLUMES ----------------
+
+# volumes:
+#   mongo_data:
+#   pg_data:
+#   grafana_data:
+
+
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+#     environment:
+#       - DB_HOST=postgres
+#       - DB_PORT=5432
+#       - DB_USER=admin
+#       - DB_PASSWORD=admin
+#       - DB_NAME=sre_db
+#     depends_on:
+#       - postgres
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+
+#   postgres:
+#     image: postgres:15
+#     environment:
+#       POSTGRES_USER: admin
+#       POSTGRES_PASSWORD: admin
+#       POSTGRES_DB: sre_db
+#     ports:
+#       - "5432:5432"
+
+#   prometheus:
+#    image: prom/prometheus
+#    volumes:
+#     - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+#    ports:
+#     - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3001:3000"
+
+
+
+# version: "3.9"
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+#     env_file:
+#     - .env
+#     environment:
+#       - PORT=5001
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+#     env_file:
+#     - .env
+#     environment:
+#       - PORT=5002
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+#     env_file:
+#     - .env
+#     environment:
+#       - PORT=5003
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+#     # environment:
+#     #   - PORT=5004
+#     #   - DB_HOST=postgres
+#     #   - DB_PORT=5432
+#     #   - DB_USER=admin
+#     #   - DB_PASSWORD=admin
+#     #   - DB_NAME=sre_db
+#     env_file:
+#     - .env
+#     depends_on:
+#       - postgres
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+#     env_file:
+#     - .env
+#     environment:
+#       - PORT=5005
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+
+#   postgres:
+#     image: postgres:15
+#     container_name: postgres
+#     restart: always
+#     environment:
+#       POSTGRES_USER: admin
+#       POSTGRES_PASSWORD: admin
+#       POSTGRES_DB: sre_db
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+
+#   prometheus:
+#     image: prom/prometheus
+#     container_name: prometheus
+#     restart: always
+#     volumes:
+#       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+#     ports:
+#       - "9090:9090"
+#     depends_on:
+#       - auth-service
+#       - user-service
+#       - product-service
+#       - order-service
+#       - chat-service
+
+#   grafana:
+#     image: grafana/grafana
+#     container_name: grafana
+#     restart: always
+#     ports:
+#       - "3001:3000"
+#     depends_on:
+#       - prometheus
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     ports:
+#       - "9100:9100"
+
+# volumes:
+#   pgdata:
+
+
+# version: "3.9"
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5001
+#     restart: unless-stopped
+#     healthcheck:
+#     test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+#     interval: 30s
+#     timeout: 10s
+#     retries: 3
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5002
+#     restart: unless-stopped
+#     healthcheck:
+#     test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+#     interval: 30s
+#     timeout: 10s
+#     retries: 3
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5003
+#     restart: unless-stopped
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+#     env_file:
+#       - .env
+#     depends_on:
+#       - postgres
+#     # environment:
+#     #   - PORT=5004
+#     #   - DB_HOST=postgres
+#     #   - DB_PORT=5432
+#     #   - DB_USER=admin
+#     #   - DB_PASSWORD=admin
+#     #   - DB_NAME=sre_db
+#     restart: unless-stopped
+#     healthcheck:
+#     test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+#     interval: 30s
+#     timeout: 10s
+#     retries: 3
+   
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5005
+#     restart: unless-stopped
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+#     restart: unless-stopped
+
+#   postgres:
+#     image: postgres:15
+#     container_name: postgres
+#     # restart: always
+#     restart: unless-stopped
+#     # environment:
+#     #   POSTGRES_USER: admin
+#     #   POSTGRES_PASSWORD: admin
+#     #   POSTGRES_DB: sre_db
+#     env_file:
+#       - .env
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+
+#   prometheus:
+#     image: prom/prometheus
+#     container_name: prometheus
+#     restart: unless-stopped
+#     volumes:
+#       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+#     ports:
+#       - "9090:9090"
+#     depends_on:
+#       - auth-service
+#       - user-service
+#       - product-service
+#       - order-service
+#       - chat-service
+
+#   grafana:
+#     image: grafana/grafana
+#     container_name: grafana
+#     # restart: always
+    
+     
+#     ports:
+#       - "3001:3000"
+#     depends_on:
+#       - prometheus
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     ports:
+#       - "9100:9100"
+#     restart: unless-stopped
+
+# volumes:
+#   pgdata:
+
+
+# version: "3.9"
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5001
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5002
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5003
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5004
+#     depends_on:
+#       - postgres
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:5004/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
+
+#   chat-service:
+#     build: ./backend/chat-service
+#     ports:
+#       - "5005:5005"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5005
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:5005/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+#     restart: unless-stopped
+
+#   postgres:
+#     image: postgres:15
+#     container_name: postgres
+#     restart: unless-stopped
+#     env_file:
+#       - .env
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+
+#   prometheus:
+#     image: prom/prometheus
+#     container_name: prometheus
+#     restart: unless-stopped
+#     volumes:
+#       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+#     ports:
+#       - "9090:9090"
+#     depends_on:
+#       - auth-service
+#       - user-service
+#       - product-service
+#       - order-service
+#       - chat-service
+
+#   grafana:
+#     image: grafana/grafana
+#     container_name: grafana
+#     restart: unless-stopped
+#     ports:
+#       - "3001:3000"
+#     depends_on:
+#       - prometheus
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     restart: unless-stopped
+#     ports:
+#       - "9100:9100"
+
+# volumes:
+#   pgdata:
+
+
+
+
+
+# services:
+
+#   auth-service:
+#     build: ./backend/auth-service
+#     ports:
+#       - "5001:5001"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5001
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD-SHELL", "wget -qO- http://localhost:5001/health || exit 1"]
+#       interval: 20s
+#       timeout: 5s
+#       retries: 5
+
+#   user-service:
+#     build: ./backend/user-service
+#     ports:
+#       - "5002:5002"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5002
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD-SHELL", "wget -qO- http://localhost:5002/health || exit 1"]
+#       interval: 20s
+#       timeout: 5s
+#       retries: 5
+
+#   product-service:
+#     build: ./backend/product-service
+#     ports:
+#       - "5003:5003"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5003
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD-SHELL", "wget -qO- http://localhost:5003/health || exit 1"]
+#       interval: 20s
+#       timeout: 5s
+#       retries: 5
+
+#   order-service:
+#     build: ./backend/order-service
+#     ports:
+#       - "5004:5004"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5004
+#     depends_on:
+#       - postgres
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD-SHELL", "wget -qO- http://localhost:5004/health || exit 1"]
+#       interval: 20s
+#       timeout: 5s
+#       retries: 5
+
+#   payment-service:
+#     build: ./backend/payment-service
+#     ports:
+#       - "5005:5005"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5005
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD-SHELL", "wget -qO- http://localhost:5005/health || exit 1"]
+#       interval: 20s
+#       timeout: 5s
+#       retries: 5
+
+#   notification-service:
+#     build: ./backend/notification-service
+#     ports:
+#       - "5006:5006"
+#     env_file:
+#       - .env
+#     environment:
+#       - PORT=5006
+#     restart: unless-stopped
+#     healthcheck:
+#       test: ["CMD-SHELL", "wget -qO- http://localhost:5006/health || exit 1"]
+#       interval: 20s
+#       timeout: 5s
+#       retries: 5
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:80"
+#     restart: unless-stopped
+
+#   postgres:
+#     image: postgres:15
+#     restart: unless-stopped
+#     env_file:
+#       - .env
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+
+#   prometheus:
+#     image: prom/prometheus
+#     restart: unless-stopped
+#     command:
+#       - "--config.file=/etc/prometheus/prometheus.yml"
+#     volumes:
+#       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+#     ports:
+#       - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana
+#     restart: unless-stopped
+#     ports:
+#       - "3001:3000"
+#     depends_on:
+#       - prometheus
+
+#   node-exporter:
+#     image: prom/node-exporter
+#     restart: unless-stopped
+#     ports:
+#       - "9100:9100"
+
+# volumes:
+#   pgdata:
+
+
+
+services:
+
+  auth-service:
+    build: ./backend/auth-service
+    image: auth-service:latest
+    ports:
+      - "5001:5001"
+    env_file:
+      - .env
+    environment:
+      - PORT=5001
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5001/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  user-service:
+    build: ./backend/user-service
+    image: user-service:latest
+    ports:
+      - "5002:5002"
+    env_file:
+      - .env
+    environment:
+      - PORT=5002
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5002/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  product-service:
+    build: ./backend/product-service
+    image: product-service:latest
+    ports:
+      - "5003:5003"
+    env_file:
+      - .env
+    environment:
+      - PORT=5003
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5003/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  order-service:
+    build: ./backend/order-service
+    image: order-service:latest
+    ports:
+      - "5004:5004"
+    env_file:
+      - .env
+    environment:
+      - PORT=5004
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5004/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  payment-service:
+    build: ./backend/payment-service
+    image: payment-service:latest
+    ports:
+      - "5005:5005"
+    env_file:
+      - .env
+    environment:
+      - PORT=5005
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5005/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  notification-service:
+    build: ./backend/notification-service
+    image: notification-service:latest
+    ports:
+      - "5006:5006"
+    env_file:
+      - .env
+    environment:
+      - PORT=5006
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5006/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build: ./frontend
+    image: frontend:latest
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  prometheus:
+    image: prom/prometheus
+    restart: unless-stopped
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+
+  node-exporter:
+    image: prom/node-exporter
+    restart: unless-stopped
+    ports:
+      - "9100:9100"
+
+volumes:
+  pgdata:

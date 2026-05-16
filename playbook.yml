@@ -1,0 +1,20 @@
+- name: Deploy Microservices with Docker Compose
+  hosts: local
+  tasks:
+
+    - name: Check Docker version
+      command: docker --version
+
+    - name: Stop containers
+      command: docker compose down
+      ignore_errors: yes
+      args:
+        chdir: /mnt/c/Users/Taya/Downloads/backendfinalllproject-main/backendfinalllproject-main/finalweb
+
+    - name: Build and start services
+      command: docker compose up -d --build
+      args:
+        chdir: /mnt/c/Users/Taya/Downloads/backendfinalllproject-main/backendfinalllproject-main/finalweb
+
+    - name: Show running containers
+      command: docker ps
