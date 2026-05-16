@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <script src="js/navbar.js"></script>
+<div class="container">
+    <h2>Admin Dashboard</h2>
+
+    <h3>Add Medicine</h3>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="description" placeholder="Description">
+    <input type="text" id="image" placeholder="Image URL">
+    <input type="number" id="price" placeholder="Price">
+    <button onclick="addMedicine()">Add</button>
+
+    <h3>All Medicines</h3>
+    <div id="medicines"></div>
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>
